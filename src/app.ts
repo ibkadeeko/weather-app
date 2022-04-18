@@ -23,7 +23,7 @@ if (process.env.NODE_ENV !== 'test') {
   app.use(morgan(process.env.NODE_ENV === 'local' ? 'dev' : 'combined', { stream }));
 }
 
-app.use('/v1', routes);
+app.use(routes);
 app.get('/', (req: Request, res: Response) => res.status(200).send('200 OK'));
 app.get('/health', (req: Request, res: Response) => {
   return successResponse({

@@ -22,32 +22,6 @@ class BadRequestError extends ApplicationError {
   }
 }
 
-class UnauthorizedError extends ApplicationError {
-  constructor(message: string) {
-    super(message, 401, 'UnauthorizedError');
-    this.name = 'UnauthorizedError';
-  }
-}
-
-class InvalidCredentialsError extends ApplicationError {
-  constructor(message: string) {
-    super(message, 401, 'InvalidCredentialsError');
-    this.name = 'InvalidCredentialsError';
-  }
-}
-class ForbiddenError extends ApplicationError {
-  constructor(message: string) {
-    super(message, 403, 'ForbiddenError');
-    this.name = 'ForbiddenError';
-  }
-}
-
-class NotAuthorizedError extends ApplicationError {
-  constructor(message: string) {
-    super(message, 403, 'NotAuthorizedError');
-    this.name = 'NotAuthorizedError';
-  }
-}
 class NotFoundError extends ApplicationError {
   constructor(message: string) {
     super(message, 404, 'NotFoundError');
@@ -55,24 +29,10 @@ class NotFoundError extends ApplicationError {
   }
 }
 
-class ConflictError extends ApplicationError {
+class ResourceNotFoundError extends ApplicationError {
   constructor(message: string) {
-    super(message, 409, 'ConflictError');
-    this.name = 'ConflictError';
-  }
-}
-
-class InvalidArgumentError extends ApplicationError {
-  constructor(message: string) {
-    super(message, 409, 'InvalidArgumentError');
-    this.name = 'InvalidArgumentError';
-  }
-}
-
-class TooManyRequestsError extends ApplicationError {
-  constructor(message: string) {
-    super(message, 429, 'TooManyRequestsError');
-    this.name = 'TooManyRequestsError';
+    super(message, 404, 'ResourceNotFoundError');
+    this.name = 'ResourceNotFoundError';
   }
 }
 
@@ -83,40 +43,17 @@ class InternalServerError extends ApplicationError {
   }
 }
 
-class BadGatewayError extends ApplicationError {
+class InternalError extends ApplicationError {
   constructor(message: string) {
-    super(message, 502, 'BadGatewayError');
-    this.name = 'BadGatewayError';
-  }
-}
-
-class ServiceUnavailableError extends ApplicationError {
-  constructor(message: string) {
-    super(message, 503, 'ServiceUnavailableError');
-    this.name = 'ServiceUnavailableError';
-  }
-}
-
-class GatewayTimeoutError extends ApplicationError {
-  constructor(message: string) {
-    super(message, 504, 'GatewayTimeoutError');
-    this.name = 'GatewayTimeoutError';
+    super(message, 500, 'InternalError');
+    this.name = 'InternalError';
   }
 }
 
 export default {
-  ApplicationError,
   BadRequestError,
-  UnauthorizedError,
-  InvalidCredentialsError,
-  ForbiddenError,
-  NotAuthorizedError,
   NotFoundError,
-  ConflictError,
-  InvalidArgumentError,
-  TooManyRequestsError,
+  ResourceNotFoundError,
   InternalServerError,
-  BadGatewayError,
-  ServiceUnavailableError,
-  GatewayTimeoutError,
+  InternalError,
 };

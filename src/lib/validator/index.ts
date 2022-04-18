@@ -27,6 +27,8 @@ export const validate = async <T>(
 
   const errors = await classValidatorValidate(dto as Record<string, unknown>, {
     validationError: { target: false },
+    whitelist: true,
+    forbidNonWhitelisted: true,
     ...validatorOptions,
   });
 
