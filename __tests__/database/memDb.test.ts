@@ -97,7 +97,7 @@ describe('MemDB', () => {
   
   describe('Querying All Data from MemDB collection', () => {
     // get array from file
-    const data = JSON.parse(fs.readFileSync('./src/database/data/city.list.json', 'utf8'));
+    const data = JSON.parse(fs.readFileSync('city.list.json', 'utf8'));
     const collection = 'cities';
     memDbInstance.createCollection(collection);
     memDbInstance.bulkInsert(collection, data);

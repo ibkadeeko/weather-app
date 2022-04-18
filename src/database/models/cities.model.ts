@@ -7,7 +7,7 @@ class CityModel extends Model {
   }
 }
 
-const data = JSON.parse(fs.readFileSync('./src/database/data/city.list.json', 'utf8'));
+const data = JSON.parse(fs.readFileSync('city.list.json', 'utf8'));
 
 const City = new CityModel('cities', data);
 

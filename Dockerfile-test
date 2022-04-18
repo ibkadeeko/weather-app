@@ -1,0 +1,14 @@
+FROM node:14.19.1-alpine3.14
+
+ENV NODE_ENV test
+ENV OPEN_WEATHER_API_KEY 12345
+
+WORKDIR /code
+
+COPY ["package.json", "package-lock.json*", "./"]
+
+RUN npm ci
+
+COPY . /code
+
+CMD npm test
